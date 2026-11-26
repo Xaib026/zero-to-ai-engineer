@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zero to AI Engineer</title>
+<meta name="description" content="A free, open-source course that takes you from zero to AI engineer in 15 animated lessons: Python, data, machine learning, LLMs, RAG, agents, evals and production.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/player.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="btn small" id="menu-btn" aria-expanded="false" aria-controls="side">☰ Lessons</button>
+    <a class="brand" href="#home">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 19 L13 7 L21 19" fill="none" stroke="var(--line)" stroke-width="1.6"/><circle cx="5" cy="19" r="3.2" fill="var(--accent)"/><circle cx="13" cy="7" r="3.2" fill="var(--signal)"/><circle cx="21" cy="19" r="3.2" fill="var(--accent)"/></svg>
+      Zero to AI Engineer</a>
+    <nav class="tabs" id="tabs" aria-label="Lesson views"></nav>
+    <div class="top-right">
+      <span class="meter-label" id="top-prog"></span>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<nav class="side" id="side" aria-label="Course path">
+    <div class="side-top"><span class="eyebrow">The AI engineer's path</span><button class="icon" id="side-close" aria-label="Close lessons">✕</button></div>
+    <h2 class="side-title">Field lab</h2>
+    <p class="side-meta" id="side-meta"></p>
+    <div class="pbar"><div id="side-bar" style="width:0%"></div></div>
+    <p class="side-meta mono" id="side-count"></p>
+    <label class="search"><span class="sr">Find a lesson</span><input id="find" placeholder="Find a lesson…" autocomplete="off"><kbd>/</kbd></label>
+    <div id="side-list"></div>
+    <div class="side-foot"><span>Progress is saved in this browser only.</span><span id="reset-zone"><button class="btn small" id="reset">Reset progress</button></span></div>
+</nav>
+
+<div class="app" id="app">
+  <main class="stage" id="stage"></main>
+  <aside class="aside" id="aside" aria-live="polite"></aside>
+</div>
+
+<script src="content/course.js"></script>
+<script src="assets/player.js"></script>
+</body>
+</html>
