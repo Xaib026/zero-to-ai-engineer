@@ -1,6 +1,6 @@
 # Contributing
 
-Corrections, clearer explanations, new labs and translations are welcome. Open an issue to discuss bigger changes first. Keep the writing plain and specific, and run the content check before opening a pull request.
+Corrections, clearer explanations, new labs and translations are welcome. Open an issue to discuss bigger changes first. Keep the writing plain and specific, and run the content check before opening a pull request. Please follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Run it locally
 
