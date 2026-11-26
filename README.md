@@ -1,70 +1,90 @@
+<div align="center">
+
 # Zero to AI Engineer
 
-A free, open-source course that takes you from zero to AI engineer in 15 animated lessons (about 600 hours of study).
+**A free, open-source course that takes you from zero to AI engineer in 15 animated lessons.**
 
-Every idea is a live diagram you can play, pause and inspect: requests travel between components, the parts that matter light up, and the numbers change as you step through. Each lesson also has notes with runnable code, a portfolio build task and a quiz, and five of them have interactive labs.
+[![Live course](https://img.shields.io/badge/live-start%20the%20course-6366f1?style=flat-square)](https://xaib026.github.io/zero-to-ai-engineer/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-22c55e?style=flat-square)](LICENSE)
+![Lessons](https://img.shields.io/badge/lessons-15-0ea5e9?style=flat-square)
+![Study time](https://img.shields.io/badge/study%20time-600%20hours-f59e0b?style=flat-square)
+![Price](https://img.shields.io/badge/price-free-22c55e?style=flat-square)
 
-The lessons follow the [Professional AI Engineer program outline](docs/professional-program-outline.md) one to one: the same 15 modules, levels and hours.
+[**Start the course →**](https://xaib026.github.io/zero-to-ai-engineer/) · [Program outline](docs/professional-program-outline.md) · [Contributing](CONTRIBUTING.md)
 
-| Level | Lessons |
-| --- | --- |
-| Foundation | Computer and technology fundamentals · Computational thinking · Python · Mathematics and statistics |
-| Core AI | AI fundamentals · Data analysis · Machine learning · Deep learning |
-| Applied AI | Generative AI and LLMs · Prompting and LLM apps · RAG and vector databases · AI agents |
-| Professional | Evaluation, security and fine-tuning · Production and MLOps · Capstone and career |
+</div>
 
-No account, no build step, no tracking. Progress is saved in your own browser. The only outside request is for fonts from Google Fonts; offline, the page falls back to system fonts.
+---
 
-## Run it
+## About
 
-Open `index.html` in a browser. Or serve the folder:
+Zero to AI Engineer teaches you to build real AI products, from your first Python script to retrieval, agents, evaluation and production. It is written for people with no programming, computer science or AI background.
 
-```bash
-python3 -m http.server 8000
-```
+Every idea is a **live diagram** you can play, pause and inspect: requests travel between components, the parts that matter light up, and the numbers change as you step through. Around each diagram you get notes with runnable code, a portfolio build task and a quiz.
 
-then visit http://localhost:8000.
+No account, no sign-up, no tracking. Your progress is saved in your own browser.
 
-## How it's organised
+## At a glance
 
-```
-index.html            page shell
-assets/player.css     styles (dark and light themes)
-assets/player.js      routing, animated diagrams, labs, quizzes, progress
-content/course.js     all lesson content: edit this to change or add lessons
-scripts/check-content.mjs   checks the content for broken diagrams
-```
+| 15 | 600 | 62 | 105 | 33 | 7 |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| lessons | hours of study | animated diagram steps | lesson notes | quiz questions | interactive labs |
 
-## Edit or add a lesson
+## Features
 
-All content lives in `content/course.js`:
+- **Animated diagrams.** Each lesson is a system you watch working, step by step, with a "think about it" question at every step.
+- **Notes with runnable code.** Short, plain explanations you tick off once you could explain them to a friend.
+- **Portfolio build tasks.** Every lesson ends with something real to build, so you finish with a portfolio, not just notes.
+- **Interactive labs.** Play with a tokenizer, sampling temperature, embedding vectors, API costs, prompts, retrieval and an agent loop.
+- **Quizzes.** Check your understanding before moving on.
+- **Works anywhere.** Desktop or phone, dark or light theme, nothing to install.
 
-- `MODULES`: each lesson's title, hours, notes (`lessons`), build task (`build`), quiz and further reading (`res`). The optional `lab` lists which interactive labs to show, by name: `tokens`, `temp`, `vectors`, `cost`, `prompt`, `rag`, `agent`. Labs are written in `assets/player.js`.
-- `SCENES`: each lesson's animated diagram.
-  - `nodes`: `id: [x, y, glyph, label, sublabel, role]` on a 680 × 370 canvas. `role` is shown when someone clicks the node.
-  - `edges`: `[from, to, label?]` connections.
-  - `metrics`: the four numbers shown above the diagram.
-  - `steps`: `{t, b, q, e, m, h?, w?}`. That's the title, body, "think about it" question, the edges data flows along (`[[from, to], …]`), the four metric values, and optional highlighted (`h`) or warning (`w`) nodes.
-- `PAYLOAD`: the label carried by the moving data in each step.
-- `SECTIONS`: which lessons belong to which level, in order. Keep `MODULES` in the same order.
+## Curriculum
 
-Lesson ids (`m0`, `ct`, `m1` …) are the keys learners' progress is saved under, so don't rename existing ones. A new lesson also needs a short label and glyph in `SHORT` and `GLY` in `assets/player.js` for the course map.
+The lessons follow the [Professional AI Engineer program outline](docs/professional-program-outline.md) one to one: the same 15 modules, four levels and 600 hours.
 
-After editing, run:
+| # | Lesson | Level | Hours | Lab |
+| :-: | --- | --- | :-: | --- |
+| 01 | Computer and Technology Fundamentals | Foundation | 25 | |
+| 02 | Computational Thinking | Foundation | 15 | |
+| 03 | Python Programming from Zero to Intermediate | Foundation | 64 | |
+| 04 | Mathematics and Statistics for AI | Foundation | 32 | Vectors |
+| 05 | Artificial Intelligence Fundamentals | Core AI | 20 | |
+| 06 | Data Analysis and Data Science | Core AI | 39 | |
+| 07 | Machine Learning Engineering | Core AI | 44 | |
+| 08 | Deep Learning and Neural Networks | Core AI | 40 | |
+| 09 | Generative AI and Large Language Models | Applied AI | 30 | Tokens, temperature |
+| 10 | Prompt Engineering and LLM Application Development | Applied AI | 42 | Cost, prompt |
+| 11 | Retrieval-Augmented Generation and Vector Databases | Applied AI | 55 | RAG |
+| 12 | AI Agents and Agentic AI Engineering | Applied AI | 60 | Agent |
+| 13 | Evaluation, Security and Fine-Tuning | Professional | 30 | |
+| 14 | Production AI, Cloud Deployment and MLOps | Professional | 44 | |
+| 15 | Professional Capstone, Portfolio and Career Preparation | Professional | 60 | |
 
-```bash
-node scripts/check-content.mjs
-```
+At 10–12 hours a week, the full course takes about 12–15 months.
 
-It reports any step that points at a missing node or edge, the wrong number of metrics, a step missing its title, body or question, a lesson missing from `SECTIONS`, a `PAYLOAD` with the wrong number of labels, or an out-of-range quiz answer.
+## Who it's for
+
+Students, graduates, career changers and developers who want to build with AI. You don't need a degree, programming experience, maths beyond school arithmetic, or any paid software. Every exercise has a free path.
+
+## What you'll be able to do
+
+- Write and test Python programs, and use SQL to store and query data.
+- Prepare and analyse datasets, and train and evaluate machine-learning models.
+- Explain how neural networks and large language models work.
+- Build applications on hosted and local LLMs.
+- Build RAG applications over your own documents.
+- Build AI agents that use tools and multi-step workflows.
+- Evaluate, secure, monitor and deploy AI systems to production.
+- Present a professional portfolio and capstone project.
+
+This is an applied AI engineering course: it teaches you to build systems on top of existing models. It does not train AI researchers or foundation-model specialists.
 
 ## Contributing
 
-Corrections, clearer explanations, new labs and translations are welcome. Open an issue to discuss bigger changes first. Keep the writing plain and specific, and run the content check before opening a pull request.
+Corrections, clearer explanations, new labs and translations are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) to get started, and open an issue to discuss bigger changes first.
 
-## Publish your own copy
-
-The site is static, so any static host works. On GitHub: Settings → Pages → deploy from the `main` branch, root folder.
+If the course helps you, a ⭐ on the repo helps others find it.
 
 ## License
 
