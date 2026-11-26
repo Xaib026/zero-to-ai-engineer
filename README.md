@@ -2,7 +2,7 @@
 
 A free, open-source course that takes you from zero to AI engineer in 15 animated lessons (about 600 hours of study).
 
-Every idea is a live diagram you can play, pause and inspect: requests travel between components, the parts that matter light up, and the numbers change as you step through. Each lesson also has notes with runnable code, a portfolio build task and a quiz, and most have hands-on labs.
+Every idea is a live diagram you can play, pause and inspect: requests travel between components, the parts that matter light up, and the numbers change as you step through. Each lesson also has notes with runnable code, a portfolio build task and a quiz, and five of them have interactive labs.
 
 The lessons follow the [Professional AI Engineer program outline](docs/professional-program-outline.md) one to one: the same 15 modules, levels and hours.
 
@@ -13,7 +13,7 @@ The lessons follow the [Professional AI Engineer program outline](docs/professio
 | Applied AI | Generative AI and LLMs · Prompting and LLM apps · RAG and vector databases · AI agents |
 | Professional | Evaluation, security and fine-tuning · Production and MLOps · Capstone and career |
 
-No account, no build step, no tracking. Progress is saved in your own browser.
+No account, no build step, no tracking. Progress is saved in your own browser. The only outside request is for fonts from Google Fonts; offline, the page falls back to system fonts.
 
 ## Run it
 
@@ -39,7 +39,7 @@ scripts/check-content.mjs   checks the content for broken diagrams
 
 All content lives in `content/course.js`:
 
-- `MODULES`: each lesson's title, notes (`lessons`), labs, build task, quiz and further reading.
+- `MODULES`: each lesson's title, hours, notes (`lessons`), build task (`build`), quiz and further reading (`res`). The optional `lab` lists which interactive labs to show, by name: `tokens`, `temp`, `vectors`, `cost`, `prompt`, `rag`, `agent`. Labs are written in `assets/player.js`.
 - `SCENES`: each lesson's animated diagram.
   - `nodes`: `id: [x, y, glyph, label, sublabel, role]` on a 680 × 370 canvas. `role` is shown when someone clicks the node.
   - `edges`: `[from, to, label?]` connections.
@@ -56,7 +56,7 @@ After editing, run:
 node scripts/check-content.mjs
 ```
 
-It reports any step that points at a missing node or edge, the wrong number of metrics, or an out-of-range quiz answer.
+It reports any step that points at a missing node or edge, the wrong number of metrics, a step missing its title, body or question, a lesson missing from `SECTIONS`, a `PAYLOAD` with the wrong number of labels, or an out-of-range quiz answer.
 
 ## Contributing
 
